@@ -45,4 +45,8 @@ type(my_list[1])
 isinstance(my_list, list)
 isinstance(my_list[1], float)
 
-
+# Type conversion. 
+# Implicit. Auto converts lower to higher data type to avoid data loss. Ex integer to float.
+# Explicit. But in other cases, it needs explicit conversion. 
+num_str = '123'
+bum_int = int(num_str)
