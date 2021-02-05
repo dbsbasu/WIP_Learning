@@ -5,9 +5,44 @@ import pandas as pd
 import numpy as np
 
 # Case-sensitivity: Except True, False and None, all keywords are in lowercare.
+
 # Single Comment
+
 """ Multiline string comments 
 But they can be used as a multi-line comment as well.
 Docstrings appear right after the definition of a function, method, class, or module.
 """
+def tripple(num):
+    """Here goes docstring... Function to triple the value"""
+    return num * 3
+
 # A code block starts with indentation (generally 4 spaces) and ends with the first unindented line. 
+
+# Assign variables
+x, y, z = 1, 2.5, "love"
+print(x, y, z)
+
+# A constant is a type of variable whose value cannot be changed
+
+# Declare and assign them on the main.py or or create a file, say const.py and refer to it in main.py
+g = 981
+x = const.g
+
+# Literal is a raw data given in a variable or constant. Types: Numeric. String, Boolian. Special.
+
+# 4 different literal collections. List, Tuple, Set and Dict.
+my_list  = [1, 2.5, 'love']              # list
+my_tuple = (1, 2.5, 'love')              # tuple
+my_set   = {1, 2.5, 'love'}              # set
+my_dict  = {'x':1, 'y':2.5, 'z':'love'}  # dictionary
+
+# Everything is an object. Data types are classes. Variables are instance (object) of classes.
+
+# Which class does a variable or values belong to? Use type().
+# How to check if an object belongs to a particular class? Use isinstance().
+type(my_list)
+type(my_list[1])
+isinstance(my_list, list)
+isinstance(my_list[1], float)
+
+
