@@ -1,0 +1,13 @@
+# Python
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+import pandas as pd
+import numpy as np
+
+# Case-sensitivity: Except True, False and None, all keywords are in lowercare.
+# Single Comment
+""" Multiline string comments 
+But they can be used as a multi-line comment as well.
+Docstrings appear right after the definition of a function, method, class, or module.
+"""
+# A code block starts with indentation (generally 4 spaces) and ends with the first unindented line. 
