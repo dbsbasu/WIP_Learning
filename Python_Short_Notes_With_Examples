@@ -163,3 +163,63 @@ for i in num:
     pass
 print('hit a pass, so nothing to do here, came out of loop')
 
+""" Datatypes ...
+begin here...
+
+Number
+String
+List
+Tuple
+Set
+Dictionaty
+"""
+
+# Datatypes 1 : Number - int, float, complex
+
+int(-2.3)          # output -2
+float(5)           # output 5.0
+complex('1+2j')    # output 1+2j
+complex(1+2j)      # output 1+2j
+
+# Datatypes 1 :  Number - Decimal
+1.1 + 2.2 == 3.3 turn out to be False
+
+import decimal as dc
+print(dc.Decimal(0.1)) 
+# or equivalently
+from decimal import Decimal as D
+print(D(0.1))    # output 0.1000000000000000055511151231257827021181583404541015625
+
+from decimal import Decimal as D
+print( D('1.1') + D('2.2') )    # output 3.3
+# use decimal over flot when we want to control level of precisions, ex. financial calc etc
+
+# Datatypes 1 :  Number - Fraction
+from fractions import Fraction as F
+print ( F(1.5))
+ 
+# Datatypes 1 : Number - Python Math
+
+import math
+math.cos(math.pi/3)      # 0.5...
+math.tan(math.pi/4)      # 0.9999.... ( = 1 ) 
+math.exp(1)              # 2.718...
+math.log(math.exp(1))    # 1.0
+math.log10(100)          # 2.0
+math.factorial(4)        # 120
+
+
+# Datatypes 1 : Number -  Function - random
+import random
+random.randrange(1,1000)
+random.randint(1,1000)
+random.random()       # get a random number
+
+x = list(range(0,10))
+random.choise(x)      # random element from list is chosen
+random.shuffle(x)     # the list x is shuffled and ordered randomly
+print(x)              # see it happens
+
+
+# Datatypes 2 : String
+
