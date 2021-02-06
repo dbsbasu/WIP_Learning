@@ -309,17 +309,18 @@ print('extend itm --> ', l)                      # extend itm -->  [[3], [10, 11
 l.remove(51)
 print('remove     --> ', l)                      # remove     -->  [[3], [10, 11], 99, 50, 52]
 l.pop(1)
-print('pop last   --> ', l)                     # pop last   -->  [[3], 99, 50, 52]
+print('pop last   --> ', l)                      # pop last   -->  [[3], 99, 50, 52]
 l.reverse()
-print('reverse    --> ', l)                     # reverse    -->  [52, 50, 99, [3]]
+print('reverse    --> ', l)                      # reverse    -->  [52, 50, 99, [3]]
 l.pop()
-print('pop indx 1 --> ', l)                     # pop indx 1 -->  [52, 50, 99]
+print('pop indx 1 --> ', l)                      # pop indx 1 -->  [52, 50, 99]
 l.sort(reverse=False)
-print('sort asc   --> ', l)                     # sort asc   -->  [50, 52, 99]
+print('sort asc   --> ', l)                      # sort asc   -->  [50, 52, 99]
 l.sort(reverse=True)
-print('sort desc  --> ', l)                     # sort desc  -->  [99, 52, 50]
+print('sort desc  --> ', l)                      # sort desc  -->  [99, 52, 50]
 l.clear()
-print('clear list --> ', l)                     # clear list -->  []
+print('clear list --> ', l)                      # clear list -->  []
 
-
+count
+index
 
