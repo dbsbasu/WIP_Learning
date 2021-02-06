@@ -163,6 +163,7 @@ for i in num:
     pass
 print('hit a pass, so nothing to do here, came out of loop')
 
+#----------------------------------------------------
 """ Datatypes ...
 begin here...
 
@@ -173,7 +174,7 @@ Tuple
 Set
 Dictionaty
 """
-
+#----------------------------------------------------
 # Datatypes 1 : Number - int, float, complex
 
 int(-2.3)          # output -2
@@ -226,8 +227,45 @@ random.choise(x)      # random element from list is chosen
 random.shuffle(x)     # the list x is shuffled and ordered randomly
 print(x)              # see it happens
 
-
+#----------------------------------------------------
 # Datatypes 2 : String
+"""
+immutable - characters cannot be changed once assigned
+charactesr cannot be deleted or removed
+
+"""
+
+my_string = 'Python Program'
+s = my_string
+s[0]             # P
+s[-1]            # g
+s[7:11]          # Prog
+s[7:-3]          # Program
+
+'P' in s             # True
+'Prog' not in s      # Fales
+list(enumerate(s)    # see results. returns index and character as value
+len(s)               # 18 = num of chars in string
+
+# escape char 
+print ('''He said "what's going on?" ''') 
+print ('He said \"what\'s going on?\" ') 
+
+# Format
+default_seq    = '{}, {}, {}'.format('a', 'b', 'c')       # a, b, c
+positional_seq = '{2}, {0}, {1}'.format('a', 'b', 'c')    # c, a, b
+key_seq        = '{z}, {x}, {y}'.format(x = 'a', y = 'b', z = 'c')    # c, a, b
+
+'{0} --> {0:b}'.format(10)       # 10 --> 1010                binary
+'{0} --> {0:o}'.format(10)       # 10 --> 12                  octal
+'{0} --> {0:x}'.format(15)       # 15 --> f                   hexadecimal
+'{0} --> {0:e}'.format(132.5)    # 132.5 --> 1.325e+2         exponential
+
+s.lower()    
+s.upper()
+
+#-----------------------------------------------
+# Datatypes 3: Liest
 
 
 
