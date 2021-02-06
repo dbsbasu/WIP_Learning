@@ -265,7 +265,61 @@ s.lower()
 s.upper()
 
 #-----------------------------------------------
-# Datatypes 3: Liest
+# Datatypes 3: List
+
+my_list = []                         # empty list
+my_list = [1, 2.5, 'love']           # list with mixed data types
+my_list = ['a', [1, 2, 3], ['happy'] ]          # nested list
+
+# Indexes
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(my_list)                             # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+l = my_list    
+print( l[0] )                              # 0
+print( l[2] )                              # 2
+print( l[:2] )                             # [0, 1]
+print( l[2:] )                             # [2, 3, 4, 5, 6, 7, 8, 9]
+print( l[2:5] )                            # [2, 3, 4]
+
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+
+l1 =  list(range(0,4)) 
+print ('create l1  --> ', l1 )                   # create l1  -->  [0, 1, 2, 3]
+l2 =  list(range(10,12)) 
+print ('create l2  --> ', l2 )                   # create l2  -->  [10, 11]
+l = []
+l.insert(0,l2)  
+l.insert(0,l1) 
+print('inserted   --> ', l)                      # inserted   -->  [[0, 1, 2, 3], [10, 11]]
+print('slice 0:1  --> ', l[0:1] )                # slice 0:1  -->  [[0, 1, 2, 3]]
+print('access 0,1 --> ', l[0][1] )               # access 0,1 -->  1
+del l[0][2]
+print('del 0,2    --> ', l)                      # del 0,2    -->  [[0, 1, 3], [10, 11]]
+del l[0][0:2]
+print('del 0,0:2  --> ', l)                      # del 0,0:2  -->  [[3], [10, 11]]
+l.append(99)
+print('append itm --> ', l)                      # [[3], [10, 11], 99]
+l.extend([50,51,52])
+print('extend itm --> ', l)                      # extend itm -->  [[3], [10, 11], 99, 50, 51, 52]
+l.remove(51)
+print('remove     --> ', l)                      # remove     -->  [[3], [10, 11], 99, 50, 52]
+l.pop(1)
+print('pop last   --> ', l)                     # pop last   -->  [[3], 99, 50, 52]
+l.reverse()
+print('reverse    --> ', l)                     # reverse    -->  [52, 50, 99, [3]]
+l.pop()
+print('pop indx 1 --> ', l)                     # pop indx 1 -->  [52, 50, 99]
+l.sort(reverse=False)
+print('sort asc   --> ', l)                     # sort asc   -->  [50, 52, 99]
+l.sort(reverse=True)
+print('sort desc  --> ', l)                     # sort desc  -->  [99, 52, 50]
+l.clear()
+print('clear list --> ', l)                     # clear list -->  []
 
 
 
