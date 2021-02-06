@@ -50,3 +50,116 @@ isinstance(my_list[1], float)
 # Explicit. But in other cases, it needs explicit conversion. Also called Type Conversion.
 num_str = '123'
 num_int = int(num_str)
+
+# Accept input
+num = input('Enter a number: ', )
+
+# Arithmetic Operators
++ - * / 
+% (modulus) 
+// (floor division)
+** exponent
+
+# Comparison Operators
+<  >  == != >= <=
+
+# Logical Operators
+and
+or
+not
+
+# Bitwise Operator
+& is AND
+| is OR
+- is NOT
+^ is XOR
+>> is RIGHT SHIFT
+<< is LEFT SHIFT
+
+# Asignment Operator
+= += -+ *= /+ etc
+
+# Special Operators : Identity
+is
+is not
+
+# Special Operators : Membership
+in     not in
+
+# Namespace
+
+# Flow Control - if else
+
+if <test condition> :
+    do this
+elif <test condition> :
+    do this
+else:
+    do this
+   
+def sign_of_a_num(x):
+    if (x > 0):
+        print ('x is positive ', x)
+    elif (x < 0):
+        print ('x is negative ', x)
+    else:
+        print ('x is zero ', x)
+        
+sign_of_a_num (5)
+sign_of_a_num (-11)
+sign_of_a_num (0)
+
+# Flow Control - for loop
+my_list = [0.1.2.3.4]
+sum = 0
+for x in my_list:
+    sum = sum + x
+print (sum)
+
+# Functions - range arange
+range(10)
+range(0,10)
+list(range(0,10)
+range(3,10)
+range(2,10,3)
+list(range(2,10,3))
+
+arange(3*5).reshapce(3,5)
+arange(3*5).reshapce(5,3)
+
+# Flow Control - for loop with elsenum = list(range(0,5))
+num = list(range(0,10))
+for i in num:
+    print(i)
+else:
+    print('end of num list... no more num to print')
+
+# Flow Control - while loop and while loop with else
+num = list(range(0,10))
+i = 0
+while (i < 5):
+    print(i)
+    i = i + 1
+else:
+    print('came out of while condition...')
+
+
+        print ('x
+
+# Flow Control - break, continue, pass
+num = list(range(0,10))
+for i in num:
+    if (i < 3):
+        print('hit continue since counter value is ', i)
+        continue
+    if (i == 8):
+        print('now loop will break since counter value is ', i)
+        break
+    print('*** printing counter since it is ', i)
+print('finally, came out of loop')
+
+num = list(range(0,10))
+for i in num:
+    pass
+print('hit a pass, so nothing to do here, came out of loop')
+
