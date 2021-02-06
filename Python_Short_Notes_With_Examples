@@ -180,6 +180,12 @@ int(-2.3)          # output -2
 float(5)           # output 5.0
 complex('1+2j')    # output 1+2j
 complex(1+2j)      # output 1+2j
+# binary
+0b1000             # 10
+# octal
+0o11               # 10 
+# hexadecimal
+0x0F               # 15
 
 # Datatypes 1 :  Number - Decimal
 1.1 + 2.2 == 3.3 turn out to be False
@@ -222,4 +228,6 @@ print(x)              # see it happens
 
 
 # Datatypes 2 : String
+
+
 
