@@ -272,21 +272,17 @@ my_list = [1, 2.5, 'love']           # list with mixed data types
 my_list = ['a', [1, 2, 3], ['happy'] ]          # nested list
 
 # Indexes
-my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-print(my_list)                             # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+my_list = list(range(0,10))
+print(my_list)                     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 l = my_list    
 print( l[0] )                              # 0
 print( l[2] )                              # 2
 print( l[:2] )                             # [0, 1]
 print( l[2:] )                             # [2, 3, 4, 5, 6, 7, 8, 9]
 print( l[2:5] )                            # [2, 3, 4]
-
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
-
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
+print( l[-1] )                             # 9
+print( l[-4:-1] )                          # [6, 7, 8]
+print( l[4:-1] )                           # [4, 5, 6, 7, 8]
 
 l1 =  list(range(0,4)) 
 print ('create l1  --> ', l1 )                   # create l1  -->  [0, 1, 2, 3]
@@ -321,6 +317,19 @@ print('sort desc  --> ', l)                      # sort desc  -->  [99, 52, 50]
 l.clear()
 print('clear list --> ', l)                      # clear list -->  []
 
-count
-index
+# count , index
+l1 = list(range(0,4))  
+print(l1)                # [0, 1, 2, 3]
+print( l1.count(1) )     # 1
+print( l1.index(1) )     # 1
+l2 = list(range(10,14))
+lst = []
+lst.insert(0,l1)
+lst.insert(1,l2)
+print(lst)                 # [[0, 1, 2, 3], [10, 11, 12, 13]]
+print( [(i, x.index(1)) for i, x in enumerate(lst) if 1 in x] )    # [(0, 1)]
+
+
+#-----------------------------------------------
+# Datatypes 3: Tuple
 
