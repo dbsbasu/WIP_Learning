@@ -266,7 +266,7 @@ s.upper()
 
 #-----------------------------------------------
 # Collection Datatypes 1: List
-# Ordered. Mutable (changeable). Allows duplicates.
+# Ordered. Changeable. Allows duplicates.
 
 my_list = []                         # empty list
 my_list = [1, 2.5, 'love']           # list with mixed data types
@@ -334,7 +334,7 @@ print( [(i, x.index(1)) for i, x in enumerate(lst) if 1 in x] )    # [(0, 1)]
 #-----------------------------------------------
 
 # Collection Datatypes 2: Tuple
-# Ordered. Immutable (unchangeable). Allows duplicates.
+# Ordered. Unchangeable - cannot add, change, delete items. Allows duplicates.
 """
 Similar to list. But Immutable.
 However, we cannot change elements once assigned in a tuple unlike a list
@@ -394,8 +394,8 @@ my_list.insert(0,t1)
 # now convert back to tuple
 my_tuple = tuple(my_list)
 t = my_tuple
-print('inserted   --> ', t)                 # inserted   -->  ((0, 1, 2, 3), (10, 11))
-print('slice 0:1  --> ', t[0] )             # slice 0  -->  (0, 1, 2, 3)
+print('converted  --> ', t)                 # converted -->  ((0, 1, 2, 3), (10, 11))
+print('slice 0    --> ', t[0] )             # slice 0  -->  (0, 1, 2, 3)
 print('access 0,1 --> ', t[0][1] )          # access 0,1 -->  1
 del t                                       # delete entire tuple. rem: cannot delete elements
 
@@ -420,8 +420,123 @@ element  3
 
 #-----------------------------------------------
 # Collection Datatypes 3: Set
-# Unordered. Immutable (unchangeable). Unique. Unindexed, 
+# Unordered. Unchangeable - Cannot change, but can remove and add new items. Unique. Unindexed, 
 
+# set can contain different data types as its items. 
+my_set = {1, 2.5, 'love', (4,5)}
+print(my_set)                # {'love', 1, 2.5, (4, 5)}
+
+# does not allow mutable data types as its items. ex list not allowed. 
+set_not_allow_mutable_data_type_as_list = {1, 2.5, 'love', [4,5]}
+print(set_not_allow_mutable_data_type_as_list)  # TypeError: unhashable type: 'list'
+
+# creat an empty set
+my_set = {}
+print ( type(my_set) )   # <class 'dict'>
+my_set = set()
+print ( type(my_set) )   # <class 'set'>
+
+# add
+my_set = {1, 2, 3}
+my_set.add(4)
+print ( my_set )      # {1, 2, 3, 4}
+
+# update - will forgive dupes
+my_set.update([5])
+print ( my_set )      # {1, 2, 3, 4, 5}
+my_set.update([6, 7], (8, 9), {0, 'a'})
+print ( my_set )      # {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a'}
+
+# discard
+my_set.discard(0)
+print ( my_set )      # {1, 2, 3, 4, 5, 6, 7, 8, 9, 'a'}
+
+# remove
+my_set.remove(1)
+print ( my_set )      # {2, 3, 4, 5, 6, 7, 8, 9, 'a'}
+
+# diff betn discard (no issues if non-existent item) and remove (error if non-existent)
+my_set.discard(0)
+print ( my_set )      # {2, 3, 4, 5, 6, 7, 8, 9, 'a'}
+my_set.remove(1)      # KeyError: 1 . b/c item does not exist and using remove.
+
+# pop - it will remove n item and will display which one it has been removed. BUT it is arbitrary
+x = my_set.pop()
+print ( x )           # 1 
+
+# Mathematical SET Operations
+
+# Union -------------------- all items from both sets
+A = {1, 2 ,3}
+B = {3, 4, 5}
+
+# using |
+AB = A | B
+print( AB )                # {1, 2, 3, 4, 5}
+
+# using union
+AB = A.union(B)
+print( AB )                # {1, 2, 3, 4, 5}
+
+# if you want to update one set with the resultant union
+A.update(B)
+print( A )                 # {1, 2, 3, 4, 5}
+
+# Intersection -------------------- common items from both sets
+A = {1, 2 ,3}
+B = {3, 4, 5}
+
+# using &
+AB = A & B
+print( AB )                 # {3}
+
+# using intersection
+AB = A.intersection(B)
+print( AB )                 # {3}
+
+# if you want to update one set with the resultant intersection
+A.intersection_update(B)
+print( A )                  # {3}
+
+# Difference -------------------- items in first set but not in second 
+A = {1, 2 ,3}
+B = {3, 4, 5}
+
+# using -
+AB = A - B
+print( AB )                 # {1, 2}
+
+# using difference
+AB = A.difference(B)
+print( AB )                 # {1, 2}
+
+# if you want to update one set with the resultant difference
+A.difference_update(B)
+print( A )                  # {1, 2}
+
+# Symmetric Difference -------------------- items not in both sets. eliminates common items
+A = {1, 2 ,3}
+B = {3, 4, 5}
+
+# using ^
+AB = A ^ B
+print( AB )                 # {1, 2, 4, 5}
+
+# using symmetric_difference
+AB = A.symmetric_difference(B)
+print( AB )                 # {1, 2, 4, 5}
+
+# if you want to update one set with the resultant symmetric difference
+A.symmetric_difference_update(B)
+print( A )                  # {1, 2, 4, 5} = A
+
+# clear ---------------------------
+# Union -------------------- all items from both sets
+A = {1, 2 ,3}
+print( A )                # {1, 2, 3}
+
+A.clear()
+print( A )                # set()
 
 
 #-----------------------------------------------
