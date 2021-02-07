@@ -568,7 +568,137 @@ print ( Y )         # False
 
 #-----------------------------------------------
 # Collection Datatypes 4: Dictionary
-# Unordered. Mutable (changeable). Unique.
+# Unordered. Changeable. Unique. Key-Value Pairs.
+
+my_dict = {}
+print ( type(my_dict) )     # <class 'dict'>
+my_dict = {
+    'model' : 'camry',
+    'year'  : 2020,
+    'color' : ['silver', 'red']
+ }
+print ( my_dict )   # {'model': 'camry', 'year': 2020, 'color': ['silver', 'red']}
+
+# get()   -- or --   dict[key]
+print ( my_dict.get('model') )   # camry
+print ( my_dict['model'] )       # camry
+
+# obtin all keys
+print ( my_dict.keys() )  # dict_keys(['model', 'year', 'color'])
+
+# check if a key exists
+if 'model' in my_dict:
+    print ( 'this key exists ' )    # this key exists 
+
+# obtain all values
+print ( my_dict.values() )  # dict_values(['camry', 2020, ['silver', 'red']])
+
+# obtain all items
+print ( my_dict.items() )  # dict_items([('model', 'camry'), ('year', 2020), ('color', ['silver', 'red'])])
+
+# change item - assign new value to a key
+my_dict['color'] = ['black', 'grey']
+print ( 'after  --> ', my_dict['color'] )    # after  -->  ['black', 'grey']
+my_dict.update({'color' : ['green', 'yellow']})
+print ( 'finally--> ', my_dict['color'] )  # finally-->  ['green', 'yellow']
+
+# add new key-value pair - assign
+my_dict['lic.'] = 'CA'
+print ( my_dict.get('lic.') )    # CA
+
+# add new key-value pair - update()
+my_dict.update({'feature' : ('AWD', 'Auto') })
+print ( my_dict.get('feature') )   ('AWD', 'Auto')
+
+# pop - delete an item by key
+my_dict.pop('model')
+print ( my_dict ) # {'year': 2020, 'color': ['green', 'yellow'], 'lic.': 'CA', 'feature': ('AWD', 'Auto')}
+
+# del - delete an item by key
+del my_dict['feature']
+print ( my_dict )   # {'year': 2020, 'color': ['green', 'yellow'], 'lic.': 'CA'}
+
+# empty dict
+my_dict.clear()
+print ( my_dict )  # {}
+
+# del - delete entire dict
+del my_dict    # dict gone
+
+# setdefault - get the value of the key, if the key does not exist, insert the new key-value
+my_dict = {
+    'model' : 'camry',
+    'year'  : 2020
+}
+print ( my_dict )   # {'model': 'camry', 'year': 2020}
+x = my_dict.setdefault('cond', 'running')
+print ( x )            # running
+print (my_dict)        # {'model': 'camry', 'year': 2020, 'cond': 'running'}
+y = my_dict.setdefault('cond', 'bad')
+print ( y )     # running
+
+# fromkeys - return a new dict with the specified keys or values (optional)
+takeKeys = ('model', 'year')
+newCar = dict.fromkeys(takeKeys)
+print ( newCar )    # {'model': None, 'year': None}
+
+# nested dicts
+car1 = {
+    'model' : 'camry',
+    'year'  : 2020,
+    'color' : ['silver', 'red']
+ }
+
+car2 = {
+    'model' : 'lexus',
+    'year'  : 2021,
+    'color' : ['black', 'white']
+ }
+ 
+my_cars = {
+     'car1' : car1,
+     'car2' : car2
+ }
+print ( my_cars ) # {'car1': {'model': 'camry', 'year': 2020, 'color': ['silver', 'red']}, 'car2': {'model': 'lexus', 'year': 2021, 'color': ['black', 'white']}}
+
+# looping
+car1 = {
+    'model' : 'camry',
+    'year'  : 2020,
+    'color' : ['silver', 'red']
+ }
+
+car2 = {
+    'model' : 'lexus',
+    'year'  : 2021,
+    'color' : ['black', 'white']
+ }
+ 
+my_cars = {
+     'car1' : car1,
+     'car2' : car2
+ }
+print ( my_cars ) # {'car1': {'model': 'camry', 'year': 2020, 'color': ['silver', 'red']}, 'car2': {'model': 'lexus', 'year': 2021, 'color': ['black', 'white']}}
+
+# print all items
+for x, y in my_cars.items():
+    print ( x, y)    # car1 {'model': 'camry', 'year': 2020, 'color': ['silver', 'red']}
+                     # car2 {'model': 'lexus', 'year': 2021, 'color': ['black', 'white']}
+# print all keys
+for x in my_cars.keys():
+    print ( x )   # car1
+                  # car2
+# or, simply
+for x in my_cars:
+    print ( x )
+
+# print all values
+for x in my_cars.values():
+    print ( x )    # {'model': 'camry', 'year': 2020, 'color': ['silver', 'red']}
+                   # {'model': 'lexus', 'year': 2021, 'color': ['black', 'white']}
+# or simply    
+for x in my_cars:
+    print ( my_cars[x] )
 
 
 """
@@ -576,7 +706,7 @@ Collection Datatypes Key Properties:
                    List            Tuple           Set             Dictionary
 Ordered    ?       Yes             Yes             No              No
 Indexed    ?       Yes             Yes             No              No
-Changeable ?       Yes             No              No              Yes
+Changeable ?       Yes             No              I/D             Yes
 Unique     ?       No              No              Yes             Yes
 
 """
