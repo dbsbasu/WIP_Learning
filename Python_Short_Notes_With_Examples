@@ -426,7 +426,7 @@ element  3
 my_set = {1, 2.5, 'love', (4,5)}
 print(my_set)                # {'love', 1, 2.5, (4, 5)}
 
-# does not allow mutable data types as its items. ex list not allowed. 
+# does not allow mutable data types as its items. eg. list not allowed. 
 set_not_allow_mutable_data_type_as_list = {1, 2.5, 'love', [4,5]}
 print(set_not_allow_mutable_data_type_as_list)  # TypeError: unhashable type: 'list'
 
@@ -464,8 +464,13 @@ my_set.remove(1)      # KeyError: 1 . b/c item does not exist and using remove.
 x = my_set.pop()
 print ( x )           # 1 
 
-# Mathematical SET Operations
+# clear ---------------------------
+A = {1, 2 ,3}
+print( A )                # {1, 2, 3}
+A.clear()
+print( A )                # set()
 
+# Mathematical SET Operations
 # Union -------------------- all items from both sets
 A = {1, 2 ,3}
 B = {3, 4, 5}
@@ -530,13 +535,35 @@ print( AB )                 # {1, 2, 4, 5}
 A.symmetric_difference_update(B)
 print( A )                  # {1, 2, 4, 5} = A
 
-# clear ---------------------------
-# Union -------------------- all items from both sets
+# isdisjoint -------------------- True if no common items. True if no interection exists.
 A = {1, 2 ,3}
-print( A )                # {1, 2, 3}
+B = {3, 4, 5}
+C = {7, 8, 9}
 
-A.clear()
-print( A )                # set()
+X = A.isdisjoint(B)
+print ( X )         # False
+Y = A.isdisjoint(C)
+print ( Y )         # True
+
+# issubset -------------------- True if all ietms in one set A is present in the other set B. A is subset of B
+A = {1, 2 }
+B = {1, 2, 3}
+C = {7, 8, 9}
+
+X = A.issubset(B)
+print ( X )         # True
+Y = A.issubset(C)
+print ( Y )         # False
+
+# issuperset -------------------- True if one set A contains all ietms from the other set B. A is superset of B
+A = {1, 2, 3}
+B = {1, 2}
+C = {7, 8, 9}
+
+X = A.issuperset(B)
+print ( X )         # True
+Y = A.issuperset(C)
+print ( Y )         # False
 
 
 #-----------------------------------------------
