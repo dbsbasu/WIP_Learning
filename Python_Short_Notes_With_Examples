@@ -175,7 +175,7 @@ Set
 Dictionaty
 """
 #----------------------------------------------------
-# Datatypes 1 : Number - int, float, complex
+# Datatypes : Number - int, float, complex
 
 int(-2.3)          # output -2
 float(5)           # output 5.0
@@ -188,7 +188,7 @@ complex(1+2j)      # output 1+2j
 # hexadecimal
 0x0F               # 15
 
-# Datatypes 1 :  Number - Decimal
+# Datatypes :  Number - Decimal
 1.1 + 2.2 == 3.3 turn out to be False
 
 import decimal as dc
@@ -201,11 +201,11 @@ from decimal import Decimal as D
 print( D('1.1') + D('2.2') )    # output 3.3
 # use decimal over flot when we want to control level of precisions, ex. financial calc etc
 
-# Datatypes 1 :  Number - Fraction
+# Datatypes :  Number - Fraction
 from fractions import Fraction as F
 print ( F(1.5))
  
-# Datatypes 1 : Number - Python Math
+# Datatypes : Number - Python Math
 
 import math
 math.cos(math.pi/3)      # 0.5...
@@ -216,7 +216,7 @@ math.log10(100)          # 2.0
 math.factorial(4)        # 120
 
 
-# Datatypes 1 : Number -  Function - random
+# Datatypes : Number -  Function - random
 import random
 random.randrange(1,1000)
 random.randint(1,1000)
@@ -228,7 +228,7 @@ random.shuffle(x)     # the list x is shuffled and ordered randomly
 print(x)              # see it happens
 
 #----------------------------------------------------
-# Datatypes 2 : String
+# Datatypes : String
 """
 immutable - characters cannot be changed once assigned
 charactesr cannot be deleted or removed
@@ -265,7 +265,8 @@ s.lower()
 s.upper()
 
 #-----------------------------------------------
-# Datatypes 3: List
+# Collection Datatypes 1: List
+# Ordered. Mutable (changeable). Allows duplicates.
 
 my_list = []                         # empty list
 my_list = [1, 2.5, 'love']           # list with mixed data types
@@ -331,7 +332,9 @@ print( [(i, x.index(1)) for i, x in enumerate(lst) if 1 in x] )    # [(0, 1)]
 
 
 #-----------------------------------------------
-# Datatypes 3: Tuple
+
+# Collection Datatypes 2: Tuple
+# Ordered. Immutable (unchangeable). Allows duplicates.
 """
 Similar to list. But Immutable.
 However, we cannot change elements once assigned in a tuple unlike a list
@@ -416,5 +419,22 @@ element  3
 """
 
 #-----------------------------------------------
-# Datatypes 4: Set
+# Collection Datatypes 3: Set
+# Unordered. Immutable (unchangeable). Unique. Unindexed, 
 
+
+
+#-----------------------------------------------
+# Collection Datatypes 4: Dictionary
+# Unordered. Mutable (changeable). Unique.
+
+
+"""
+Collection Datatypes Key Properties:
+                   List            Tuple           Set             Dictionary
+Ordered    ?       Yes             Yes             No              No
+Indexed    ?       Yes             Yes             No              No
+Changeable ?       Yes             No              No              Yes
+Unique     ?       No              No              Yes             Yes
+
+"""
