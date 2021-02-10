@@ -701,6 +701,114 @@ for x in my_cars:
     print ( my_cars[x] )
 
 
+
+# iterator -------------------------------
+lst = list(range(0,5))
+itr = iter(lst)
+next(itr)
+
+# generator ------------------------------
+def reverse_list(a_list):
+    len_list = len(a_list)
+    for i in range(len_list-1, -1, -1):
+        yield a_list[i]
+
+my_list = list(range(0,10))
+
+for x in reverse_list(my_list):
+    print( x )
+
+
+# generator expression - to understand generator expression, lets look at its diff with list
+# this is what happens with list
+my_list = list(range(0,5))
+
+square_list = [x**2 for x in my_list]
+
+square_list        # [0, 1, 4, 9, 16]
+
+# this is how we can extract items from generator object
+generator = (x**2 for x in my_list)   
+
+generator    # <generator object <genexpr> at 0x00000180A71C5048>
+
+print(next(generator))   # 0
+
+# use generator expression as an argument for a function
+max(generator)   # 16
+
+# closure -----------------------------
+# when we have only a 1 or 2 methods, we can use a closure. 
+# it avoids use of global values and thereby protects / hides data
+# when having a number of methods, must use class.
+
+def fn_A(name):
+    # enclosing fn
+    
+    def fn_B():
+        # nested fn
+        print(name)    # here the nested fn is referring to a value from enclosing fn
+
+    return fn_B  # return nested fn
+
+x = fn_A('joy')
+
+x()    # joy
+
+# decorators ----------------------------
+# takes a fn, adds some functionality to it.... and then returns it
+# part of the program tries to modify another part at compile time. called metaprogramming
+
+
+# fn that takes other fn as argument is called higher order fn
+# a fn can return another fn
+# fn / methods are called "callable" as they can be called.
+# a decorator is a callable that returns a callable.
+
+# here is adecorator example - @check_divisor
+def check_divisor(func):
+    def checking(a, b):
+        print('the ask is to divide ', a, ' by ' , b)
+        if b == 0:
+            print( 'sorry cannot divide by 0')
+        return func(a, b)
+    return checking
+
+@check_divisor
+def divide(a, b):
+    print(a/b)
+
+divide(4,2)        # the ask is to divide  4  by  2   # 2.0
+
+divide(4,0)        # the ask is to divide  4  by  0   # sorry cannot divide by 0
+
+# chaining decorators
+
+def do_a_square(func):
+    def squaring(a):
+        b = a * a
+        print('square of ', a, ' is ', b)
+        return func(b)
+    return squaring
+
+def do_a_sqrt(func):
+    def sqrting(a):
+        b = sqrt(a)
+        print('square root of ', a, ' is ', b)
+        return func(b)
+    return sqrting
+
+@do_a_square
+@do_a_sqrt
+def math_fun(a):
+    print('math is fun')
+
+math_fun(2)    # square of  2  is  4   # square root of  4  is  2.0 # math is fun
+
+# property decorator ---------------------------
+
+
+
 """
 Collection Datatypes Key Properties:
                    List            Tuple           Set             Dictionary
